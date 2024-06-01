@@ -17,6 +17,10 @@
   border: 4px solid green;
 }
 
+.noborder {
+  border: none;
+}
+
 .submit {
   flex-direction: column;
 }
