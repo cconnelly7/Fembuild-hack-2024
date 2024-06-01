@@ -5,7 +5,9 @@ import styles from "./page.module.css";
 import React, { useState } from "react";
 
 export default function Home() {
+  type Base64<imageType extends string> = `data:image/${imageType};base64${string}`
   const [img, setImg] = useState<string>('');
+  const [img64, setImg64] = useState('');
 
   const images = require.context('../../public/garments', true);
   const imageList = images.keys().map(image => images(image));
@@ -16,6 +18,7 @@ export default function Home() {
     var file = element.target.files[0];
     var reader = new FileReader();
     reader.onloadend = function() {
+      setImg64(reader.result as string);
       console.log('RESULT', reader.result)
     }
     reader.readAsDataURL(file);
