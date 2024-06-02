@@ -21,6 +21,10 @@
   border: none;
 }
 
+.noborder {
+  border: none;
+}
+
 .submit {
   flex-direction: column;
 }
