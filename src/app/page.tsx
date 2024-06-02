@@ -64,7 +64,7 @@ export default function Home() {
         urlToBase64(await url).then(dataUrl => {
             setBase64Output(dataUrl as string)
     })
-};
+  };
 
   const handleUpload = async () => {
     console.log('Upload image')
