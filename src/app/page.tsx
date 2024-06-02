@@ -20,8 +20,7 @@ export default function Home() {
 
 
   function encodeImageFileAsURL(element: any) {
-    // console.log('hihi ', element.target.files[0]);
-    // setImg(URL.createObjectURL(element.target.files[0]));
+    setModelFileName(element.target.files[0].name);
     setModelImage(URL.createObjectURL(element.target.files[0]));
     var file = element.target.files[0];
     var reader = new FileReader();
@@ -35,7 +34,6 @@ export default function Home() {
     // setModelFileName(file.name)
     reader.readAsDataURL(file);
   }
-  // console.log('IMAGE64 ', img64)
 
   function encodeGarment(e: any, index: number) {
     setAvtive(index);
@@ -73,12 +71,12 @@ export default function Home() {
     let modelFilePath = "././public/models/"
     let garmFilePath = "././public/garments/"
     // do this somewhere else
-    setModelFileName("model_2.png")
+    // setModelFileName("model_2.png")
     setGarmFileName("sweater.png")
 
     var formData = new FormData();
     // TODO - CHANGE THE FILENAMES
-    formData.append("modelFilePath", modelFilePath.concat("model_2.png"))
+    formData.append("modelFilePath", modelFilePath.concat(modelFileName))
     formData.append("garmFilePath", garmFilePath.concat("sweater.png"))
 
     const response = await fetch('http://127.0.0.1:8000/upload', {
