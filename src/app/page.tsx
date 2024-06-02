@@ -36,6 +36,11 @@ export default function Home() {
   }
 
   function encodeGarment(e: any, index: number) {
+    if(index) {
+      setGarmFileName('sweater.png');
+    } else {
+      setGarmFileName('busty.png');
+    }
     setAvtive(index);
   }
 
@@ -70,14 +75,10 @@ export default function Home() {
     // TODO - save state for both modelFileName and garmFileName
     let modelFilePath = "././public/models/"
     let garmFilePath = "././public/garments/"
-    // do this somewhere else
-    // setModelFileName("model_2.png")
-    setGarmFileName("sweater.png")
 
     var formData = new FormData();
-    // TODO - CHANGE THE FILENAMES
-    formData.append("modelFilePath", modelFilePath.concat(modelFileName))
-    formData.append("garmFilePath", garmFilePath.concat("sweater.png"))
+    formData.append("modelFilePath", modelFilePath.concat(modelFileName));
+    formData.append("garmFilePath", garmFilePath.concat(garmFileName));
 
     const response = await fetch('http://127.0.0.1:8000/upload', {
         mode: 'cors',
