@@ -2,10 +2,20 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Get your Replicate token here:
+https://replicate.com/account/api-tokens
+
+Export it as an env var:
+
+```bash
+export REPLICATE_API_TOKEN=r8_Tbs*******************
+```
+
 First, run the development server:
 
 ```bash
 npm run dev
+- Runs both frontend and backend simultaneously using the concurrently npm package
 # or
 yarn dev
 # or
