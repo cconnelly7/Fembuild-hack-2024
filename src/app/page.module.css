@@ -1,19 +1,26 @@
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex: 1;
+  flex-direction: row;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+.selfieWrapper {
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.highlight {
+  border: 4px solid green;
+}
+
+.noborder {
+  border: none;
+}
+
+.submit {
+  flex-direction: column;
 }
